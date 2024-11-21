@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form id="loginForm" onsubmit="return validateForm()" method="post">
+  <div class="imgcontainer">
+    <img src="https://tse1.mm.bing.net/th?id=OIP.DYszyQTjfxByL9AGT8kiCwHaHa&pid=Api&P=0&h=180" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn" onclick="cancelForm()">Cancel</button>
+    <span class="psw">Forgot <a href="#" onclick="forgotPassword()">password?</a></span>
+  </div>
+</form>
+
+<script>
+// Validate the form fields before submitting
+function validateForm() {
+  var username = document.getElementById("uname").value;
+  var password = document.getElementById("psw").value;
+
+  // Check if both fields are filled out
+  if (username === "" || password === "") {
+    alert("Username and Password must be filled out.");
+    return false; // Prevent form submission
+  }
+
+  // Optionally, further validation can be added here, such as pattern matching
+  return true; // Form is valid
+}
+
+// Function to clear the form if cancel is clicked
+function cancelForm() {
+  document.getElementById("loginForm").reset(); // Reset the form
+}
+
+// Function for the "Forgot password?" link
+function forgotPassword() {
+  alert("Password recovery is not yet implemented.");
+  // You can add logic for password recovery here, like opening a new page or sending an email
+}
+</script>
+
+</body>
+</html>
